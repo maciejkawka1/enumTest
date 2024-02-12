@@ -29,22 +29,15 @@ public class Main {
         List<Integer> listOfIntegers = new ArrayList<>();
 
         for(String element : listOfStrings){
-            if(isValidString(element)){
+
+            try {
                 listOfIntegers.add(Integer.parseInt(element));
+            }catch (NumberFormatException e){
+
             }
         }
 
         return listOfIntegers;
-    }
-
-    private static boolean isValidString(String element) {
-
-        try {
-            Integer.parseInt(element);
-            return true;
-        }catch (NumberFormatException e){
-            return false;
-        }
     }
 
 
